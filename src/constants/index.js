@@ -1,0 +1,55 @@
+export const PRODUCT_PAGE = {
+  enable_product_gallery_popup: false,
+  show_breadcrumb_links: false,
+  show_vendor: false,
+  show_sku: false,
+  show_price_savings: false,
+  show_collections: false,
+  show_types: false,
+  show_tags: false,
+  show_social_media_share_icons: false,
+  product_review_type: 'single',
+  show_sticky_button: false,
+  display_on: 'all',
+  hide_selector_enable: false,
+  options_style: 'buttons',
+  show_quantity_box: false,
+  free_product_text: 'Free',
+  link_product_options: 'show_all',
+  template_product: 'description_bottom',
+  enable_color_swatches: false,
+  blocks: [
+    {
+      element_type: 'product-desc',
+      heading: 'Description',
+      collapse_tab: false,
+    },
+  ],
+}
+
+export const HEADER = {
+  alt_text: 'ShopName',
+  color_bg: '#1C1D1D',
+  color_text: '#FFFFFF',
+  drawer_search_enable: true,
+  home_page_only: false,
+  logo: '',
+  main_menu_link_list: 'main-menu',
+  search: 'modal',
+  show_announcement: false,
+  link: null,
+  text: 'Announce something here',
+}
+
+export const FOOTER = {
+  footer_link_list: 'footer-menu',
+  show_payment_icons: false,
+  show_social_profile: false,
+  custom_text: '',
+  social_blog_link: '',
+  social_facebook_link: '',
+  social_instagram_link: '',
+  social_pinterest_link: '',
+  social_twitter_link: '',
+  social_youtube_link: '',
+}

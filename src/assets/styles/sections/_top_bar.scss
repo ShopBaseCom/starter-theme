@@ -1,0 +1,78 @@
+.top-bar {
+  padding: 8px;
+  @include res(xs) {
+    display: none;
+  }
+  border-bottom: 1px solid $gray-50;
+  background-color: $color_top_bar_background;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
+
+  .social-icons {
+    padding: 4px 0;
+    > a {
+      .social-icon {
+        background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat;
+        background-size: 16px auto;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+
+        &.facebook {
+          background-position: 0 0;
+        }
+        &.twitter {
+          background-position: 0 -23px;
+        }
+        &.pinterest {
+          background-position: 0 -46px;
+        }
+        &.youtube {
+          background-position: 0 -159px;
+        }
+        &.insta {
+          background-position: 0 -68px;
+        }
+        &.blog {
+          background-position: 0 -250px;
+        }
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .login-contact-area {
+    display: flex;
+
+    .top-menu {
+      color: $color_top_menu;
+
+      &:hover {
+        color: adaptive-color($color_top_bar_background, $color_top_menu, 20%);
+      }
+    }
+  }
+  .currency {
+    position: relative;
+
+    select {
+      background: transparent;
+      border: none;
+      padding-right: 16px;
+    }
+    .dropdown-icon {
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat 0 -144px;
+      background-size: 17px auto;
+      display: inline-block;
+      position: absolute;
+      pointer-events: none;
+      width: 16px;
+      height: 16px;
+      right: 4px;
+      top: 0;
+    }
+  }
+}

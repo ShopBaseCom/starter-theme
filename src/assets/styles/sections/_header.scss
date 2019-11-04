@@ -1,0 +1,431 @@
+.announcement-bar {
+  background-color: $color_announcement_bar_background;
+  .annouce-content * {
+    font-size: 14px;
+    color: $color_announcement_message_text;
+    margin-bottom: 0;
+  }
+}
+
+.header {
+  border-bottom: 1px solid $gray-100;
+  background-color: rgba($color_menu_background, $menu_background_opacity / 100);
+  &.sticky {
+    border-top: 0;
+    position: fixed;
+    top: 0;
+    transition: .2s all;
+    z-index: 5;
+    width: 100%;
+  }
+
+  @include res(xs) {
+    padding: 16px 0;
+    .logo-col {
+      order: 2;
+    }
+    .menu-col {
+      order: 1;
+    }
+    .cart-col {
+      order: 3;
+    }
+    .logo {
+    }
+  }
+
+  @include res(sm) {
+    .logo-col {
+      justify-content: flex-start;
+    }
+  }
+
+  .logo {
+    width: 100%;
+    img {
+      max-height: 48px;
+    }
+    .fit-logo {
+      object-fit: contain;
+    }
+  }
+
+  .logo-text {
+    color: $color_logo_text;
+    &:hover {
+      color: adaptive-color(rgba($color_menu_background, $menu_background_opacity / 100), $color_logo_text, 20%);
+    }
+
+    > div {
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+
+  //Mobile markup
+  &.responsive {
+    .menu-content-mobile {
+      button {
+        background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat 0 -401px;
+        background-size: 32px auto;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+      }
+      display: none;
+    }
+    @include res(xs) {
+      .menu-content-col {
+        order: 1;
+        .menu-content-desk {
+          display: none;
+        }
+        .menu-content-mobile {
+          display: initial;
+        }
+      }
+    }
+  }
+  .menu-content {
+    a {
+      color: $gray-1200;
+      font-family: $type_header_family;
+      font-size: 12px;
+      margin: 0 40px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .cart-col {
+    .search-icon {
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat -1px -448px;
+      background-size: 32px auto;
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      z-index: 1;
+      @include res(sm) {
+        width: 40px;
+        height: 40px;
+        background-position: 4px -442px;
+        padding: 10px;
+      }
+    }
+    .search-bar {
+      @include res(xs) {
+        display: none;
+      }
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      input {
+        border-radius: 0;
+        width: 40px;
+        height: 40px;
+        padding: 0 28px 0 10px;
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        z-index: 2;
+        cursor: pointer;
+        transition: all .2s ease;
+
+        &:focus {
+          width: 180px;
+          opacity: 1;
+          z-index: 0;
+          outline: none;
+          border-color: adaptive-color($color_menu_background, $gray-1200, 10%);
+          transition: all .25s ease;
+          cursor: text;
+        }
+      }
+    }
+    .search-icon-mobile {
+      display: none;
+      @include res(xs) {
+        display: flex;
+        position: relative;
+      }
+      .search-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  .cart-drawer-content {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    opacity: 0;
+    transition: .3s all ease-in;
+    z-index: -1;
+    pointer-events: none;
+    &--active {
+      top: calc(50% + 25px);
+      opacity: 1;
+      z-index: 9;
+      pointer-events: auto;
+    }
+    @include res(md) {
+      max-width: 406px;
+      min-width: 406px;
+      left: auto;
+      &--active {
+        top: calc(50% + 10px);
+      }
+    }
+  }
+
+  .cart-area {
+    position: relative;
+
+    &.cart-area-disable {
+      pointer-events: none;
+    }
+
+    .cart-icon-cart {
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat 0 -360px;
+      background-size: 32px auto;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      @include res(xs) {
+        background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat 0 -362px;
+        background-size: 32px auto;
+      }
+    }
+    .cart-icon-bag {
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat -4px -543px;
+      background-size: 32px auto;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      @include res(xs) {
+        background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat -4px -544px;
+        background-size: 32px auto;
+      }
+    }
+    .cart-number {
+      border-radius: 50%;
+      background-color: #22232A;
+      color: #fff;
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: 10px;
+      position: absolute;
+      padding: 3px;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .nav-customer {
+    .login-icon {
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat 0 -136px;
+      background-size: 24px auto;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .site-nav {
+    text-rendering: optimizeLegibility;
+    white-space: nowrap;
+
+    @include share-rule(show-dropdown) {
+      opacity: 1;
+      pointer-events: initial;
+      transform: translate3d(0, 0, 0);
+      transition: transform .3s cubic-bezier(0.2, .06, .05, .95);
+    }
+
+    @include share-rule(dropdown) {
+      position: absolute;
+      z-index: 5;
+      opacity: 0;
+      pointer-events: none;
+      background-color: rgba($color_menu_background, $menu_background_opacity / 100);
+      min-width: 100%;
+      box-shadow: 0 4px 24px -4px rgba(adaptive-color($color_menu_background, $black, 10%) ,.16);
+      transform: translate3d(0, -12px, 0);
+    }
+
+    &--hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &__item {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      white-space: normal;
+
+      li {
+        display: block;
+      }
+    }
+
+    &__link {
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 0.875em;
+      text-decoration: none;
+      white-space: nowrap;
+      color: $color_main_menu;
+      transition: color 0.2s;
+
+      &:hover {
+        color: adaptive-color($color_menu_background, $color_main_menu, 20%);
+      }
+    }
+
+    &--has-dropdown {
+      & > a {
+        position: relative;
+        z-index: 6;
+      }
+
+      &:hover {
+        .site-nav__dropdown {
+          @include extend-rule(show-dropdown);
+          pointer-events: auto;
+        }
+      }
+
+      &.site-nav--has-dropdown-grandchild {
+        a:before {
+          display: none;
+        }
+      }
+    }
+
+    &__icon {
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') 0 -137px no-repeat;
+      background-size: 16px auto;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      margin-left: 8px;
+
+      &.is-active {
+        background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') -2px -170px no-repeat;
+      }
+    }
+
+    &__dropdown {
+      @include extend-rule(dropdown);
+      left: 0;
+      display: block;
+    }
+
+    &__dropdown,
+    &__dropdown-grandchild,
+    &__dropdown-great-grandchild {
+      a {
+        background-color: transparent;
+        color: $color_main_menu;
+
+        &:hover {
+          background-color: adaptive-color($color_menu_background, $white, 4%);
+          color: adaptive-color($color_menu_background, $color_main_menu, 20%);
+        }
+      }
+    }
+
+    &--has-grandchildren,
+    &--has-great-grandchild {
+      .site-nav__dropdown-link {
+        padding-right: 45px;
+      }
+    }
+    &--more-section {
+      > a {
+        top: -1px;
+      }
+      .site-nav__more {
+        display: inline-block;
+        background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') -4px -485px no-repeat;
+        background-size: 24px auto;
+        width: 16px;
+        height: 6px;
+      }
+      .site-nav__dropdown-link {
+        padding-right: 25px;
+        width: calc((50vw - 270px) / 3);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+    &__dropdown-grandchild,
+    &__dropdown-great-grandchild {
+      @include extend-rule(dropdown);
+      top: -10px;
+      left: 100%;
+      width: 100%;
+
+      ul {
+        background-color: $color_menu_background;
+      }
+
+      .site-nav__dropdown-link {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 16px;
+        text-align: left;
+      }
+    }
+    &__dropdown-link {
+      display: block;
+      white-space: nowrap;
+      padding: 8px 16px;
+      font-size: 1em;
+      text-decoration: none;
+      text-align: left;
+
+      .site-nav__icon {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%) rotate(-90deg);
+      }
+    }
+
+    &--has-dropdown-grandchild {
+      &:hover {
+        .site-nav__dropdown-grandchild {
+          @include extend-rule(show-dropdown);
+        }
+      }
+    }
+
+    &--has-dropdown-great-grandchild {
+      &:hover {
+        .site-nav__dropdown-great-grandchild {
+          @include extend-rule(show-dropdown);
+        }
+      }
+    }
+  }
+}
+
+//Style prevent missing height when fixed is active
+.anchor.height {
+  height: 70px;
+}

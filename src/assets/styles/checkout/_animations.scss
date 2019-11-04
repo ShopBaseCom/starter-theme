@@ -1,0 +1,9 @@
+// Fade
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity $speed-slow $easing;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}

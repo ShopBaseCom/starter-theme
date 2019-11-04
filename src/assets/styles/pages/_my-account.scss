@@ -1,0 +1,138 @@
+$color-tertiary: #bdbdbd;
+$color-grey-light: #dfdfdf;
+
+.my_account {
+  .heading-content {
+    margin: 1rem auto 0;
+  }
+  .text-wrapper {
+    max-width: 555px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .edit-profile {
+    @include res(md) {
+      justify-content: flex-end;
+    }
+    &__icon{
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg?v=3') no-repeat 0 -500px;
+      background-size: 24px auto;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
+
+  }
+  .section-address {
+    border-top: 1px solid $color_borders;
+    .input-text {
+      input {
+        color: $color_body_text;
+        font-size: $type_base_size;
+        border-color: $color_borders;
+        background-color: $color_input;
+      }
+      label {
+        font-size: $type_base_size;
+      }
+    }
+    .checkbox-text {
+      label {
+        color: $color_body_text;
+        font-size: $type_base_size;
+      }
+    }
+    .select-input {
+      &:after {
+        top: 0.625em;
+      }
+      label {
+        left: 8px;
+      }
+      select {
+        background-color: $color_input;
+        border-bottom: 1px solid $color_borders;
+        height: 44px;
+        line-height: normal;
+      }
+    }
+    .cl-disable {
+      color: lighten($color_body_text, 50%);
+    }
+    .cl-tertiary {
+      color: lighten($color_body_text, 50%);
+    }
+    .cl-accent {
+      color: $color_secondary;
+    }
+    .button-edit {
+      background-color: $color_primary;
+      color: $color_drawer_text;
+      &:hover {
+        background-color: lighten($color_primary, 50%);
+      }
+    }
+    .button-cancel {
+      &:hover {
+        border-color: $color_drawer_border;
+      }
+      @media (max-width: 425px) {
+        width: 100%;
+        margin-top: 16px;
+        text-align: center;
+      }
+    }
+    .return-text {
+      border-color: $color_drawer_border;
+    }
+    .address-details {
+      p {
+        color: $color_body_text;
+        font-size: $type_base_size;
+      }
+    }
+    .delete-button {
+      text-decoration-color: $color_drawer_border;
+      font-size: $type_base_size;
+      color: $color_body_text;
+    }
+    table {
+      border-color: $color_borders;
+      .dropdown-content {
+        font-size: $type_base_size;
+        background-color: $color_body_background;
+        a {
+          &:hover {
+            background-color: darken($color_body_background, 5%);
+          }
+        }
+      }
+    }
+  }
+  .static-menu {
+    ul {
+      list-style: none;
+    }
+
+    a {
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $color-tertiary;
+      }
+
+      &:hover,
+      &.router-link-exact-active {
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+}

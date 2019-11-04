@@ -1,0 +1,28 @@
+.banner_holder {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  transform: scale(.75);
+  @include res(lg) {
+    top: -15px;
+    left: -15px;
+    transform: scale(1);
+  }
+
+  .new_banner, .sale_banner , .soldout_banner {
+    background: url('#{$asset_path}/images/icons/sprites-icon-32.svg?v=3') no-repeat;
+    background-repeat: no-repeat;
+    transform: rotateZ(-12deg);
+    width: 32px;
+    height: 32px;
+  }
+  .new_banner {
+    background-position: -240px 0;
+  }
+  .sale_banner {
+    background-position: -288px 0;
+  }
+  .soldout_banner {
+    background-position: -336px 0;
+  }
+}

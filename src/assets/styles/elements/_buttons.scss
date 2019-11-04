@@ -1,0 +1,160 @@
+.btn {
+  @include buttonFontStack;
+  font-size: 12px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline-flex;
+  justify-content: center;
+  height: inherit;
+  line-height: 18px;
+  letter-spacing: 2px;
+  padding: 10px 22px;
+  position: relative;
+  transition: .3s all;
+  text-align: center;
+  text-decoration: none;
+  &.btn-primary {
+    @include button-styles($color_background, $color_buttons, $color_buttons_label, 10%);
+  }
+  &.btn-outline-gray {
+    background-color: $white;
+    border: 1px solid #22232A;
+    color: #22232A;
+    text-decoration: none;
+    // States
+    &:focus,
+    &.focused,
+    &:active,
+    &:hover,
+    &.hovered,
+    &.active {
+      border: 1px solid #686A7E;
+      color: #686A7E;
+    }
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] & {
+      border: 1px solid #9D9FAF;
+      color: #D5D6DC;
+    }
+  }
+  &.btn-outline-white {
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+    text-decoration: none;
+    // States
+    &:focus,
+    &.focused,
+    &:active,
+    &:hover,
+    &.hovered,
+    &.active {
+      border: 1px solid darken($white, 10%)
+    }
+  }
+  &.btn-outline {
+    background-color: transparent;
+    border: 1px solid color-control($color_background);
+    color: color-control($color_background);
+    &:focus,
+    &.focused,
+    &:active,
+    &:hover,
+    &.hovered,
+    &.active {
+      border: 1px solid adaptive-color(color-control($color_background), color-control($color_background), 20%);
+      color: adaptive-color(color-control($color_background), color-control($color_background), 20%);
+      text-decoration: none;
+    }
+  }
+  // Colors
+  &.is-text {
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: underline;
+  }
+  // Modifiers
+
+  &.fullwidth {
+    display: flex;
+    width: 100%;
+  }
+  &.is-loading {
+    color: transparent !important;
+    pointer-events: none;
+    &::after {
+      animation: spinAround 500ms infinite linear;
+      border: 2px solid $color_buttons_label;
+      border-radius: 50%;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      content: "";
+      display: block;
+      height: 1em;
+      width: 1em;
+      position: absolute;
+      left: calc(50% - (1em / 2));
+      top: calc(50% - (1em / 2));
+    }
+
+    &.btn-outline-gray {
+      &::after {
+        border-left-color: #22232A;
+        border-bottom-color: #22232A;
+      }
+    }
+
+    &.btn-outline-white {
+      &::after {
+        border-left-color: $white;
+        border-bottom-color: $white;
+      }
+    }
+
+    &.btn-outline {
+      &::after {
+        border-left-color: color-control($color_background);
+        border-bottom-color: color-control($color_background);
+      }
+    }
+  }
+  &.is-rounded {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+
+.button-dual-ring {
+  position: absolute;
+  top: calc(50% - 11px);
+  left: calc(50% - 11px);
+
+  &:after {
+    content: ' ';
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #222222 rgba(#ffffff, .7) #222222 rgba(#ffffff, .7);
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+
+  & + span {
+    visibility: hidden;
+  }
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,101 @@
+.scoped {
+  &.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($black, .4);
+    z-index: 3;
+    height: 100vh;
+  }
+  &.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 10;
+    text-align: inherit;
+
+    .modal-wrapper {
+      display: table;
+      height: 100%;
+      width: 100%;
+      table-layout: fixed;
+      pointer-events: none;
+    }
+
+    .modal-center {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .modal-container {
+      width: 945px;
+      margin: 0 auto;
+      max-width: 100%;
+      max-height: 100%;
+      z-index: 11;
+      pointer-events: auto;
+      background-color: $white;
+
+      @media (max-width: 600px) {
+        min-height: 100%;
+        min-width: 100%;
+        margin: 0;
+      }
+    }
+
+    .modal-header {
+      @include headerFontStack;
+      position: relative;
+      font-size: em(floor($type_header_base_size * 0.5));
+      color: $color_headings;
+      background-color: $gray-50;
+
+      > * {
+        margin: 0;
+      }
+
+      @media (max-width: 600px) {
+        padding: 25px 20px;
+      }
+    }
+
+    .modal-content {
+      @media (max-width: 600px) {
+        padding: 30px 20px;
+      }
+      .input-base {
+        input {
+          background-color: $color_input !important;
+        }
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+      top: 0;
+    }
+
+    .login-button {
+      background-color: $color_primary;
+      color: $color_button_text;
+    }
+
+    .center-xs {
+      text-align: center;
+    }
+
+    .col-xs-6 {
+      position: relative;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+}

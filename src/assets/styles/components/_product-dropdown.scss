@@ -1,0 +1,60 @@
+.product-dropdown {
+  position: relative;
+  select {
+    width: 100%;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+
+    color: color-control($color_background);
+    border: 1px solid #E6E6E6;
+    background: none;
+    border-radius: 0;
+    font-size: 1em;
+    line-height: 1.4285714em;
+    padding: 5px 38px 5px 16px;
+    min-width: 100px;
+
+    &::-ms-expand {
+      display: none;
+    }
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+      background: none;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    -webkit-transition: -webkit-transform 200ms ease-out;
+    transition: -webkit-transform 200ms ease-out;
+    -o-transition: transform 200ms ease-out;
+    transition: transform 200ms ease-out;
+    transition: transform 200ms ease-out, -webkit-transform 200ms ease-out;
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    transform: translateY(-50%) rotate(-45deg);
+    border: 2px solid color-control($color_background);
+    height: 7px;
+    width: 7px;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 2px;
+  }
+  &:focus,
+  &.focused,
+  &:active,
+  &:hover,
+  &.hovered,
+  &.active {
+    select {
+      color: adaptive-color(color-control($color_background), color-control($color_background), 20%);
+    }
+    &::after {
+      border-color: adaptive-color(color-control($color_background), color-control($color_background), 20%);
+    }
+  }
+}

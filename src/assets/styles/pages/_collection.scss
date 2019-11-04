@@ -1,0 +1,13 @@
+.collection-detail {
+
+  .sort_by {
+    .base-select {
+      @include res(sm) {
+        max-width: 262px;
+      }
+    }
+  }
+  .load-more {
+    font-weight: $font-weight-medium;
+  }
+}

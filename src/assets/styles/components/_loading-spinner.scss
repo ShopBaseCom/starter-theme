@@ -1,0 +1,18 @@
+.loading-spinner {
+  position: relative;
+  padding-bottom: 24px;
+  width: 100%;
+  &:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top:calc(50% - 10px);
+    left: calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid adaptive-color($color_background, $gray-200, 20%);
+    border-top-color: adaptive-color($color_background, $black, 20%);
+    animation: loading-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+}

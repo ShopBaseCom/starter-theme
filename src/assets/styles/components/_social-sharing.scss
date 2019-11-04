@@ -1,0 +1,35 @@
+.social-sharing {
+  .social-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+  }
+
+  .share-facebook {
+    .social-icon {
+      background: url('#{$asset_path}/images/icons/sprites-icon-16.svg?v1') 0 0 no-repeat;
+      background-size: 16px auto;
+    }
+  }
+
+  .share-twitter {
+    .social-icon {
+      background: url('#{$asset_path}/images/icons/sprites-icon-16.svg?v1') 0 -34px no-repeat;
+      background-size: 16px auto;
+    }
+  }
+
+  .share-pinterest {
+    .social-icon {
+      background: url('#{$asset_path}/images/icons/sprites-icon-16.svg?v1') 0 -68px no-repeat;
+      background-size: 16px auto;
+    }
+  }
+
+  .share-email {
+    .social-icon {
+      background: url('#{$asset_path}/images/icons/sprites-icon-16.svg?v1') 0 -102px no-repeat;
+      background-size: 16px auto;
+    }
+  }
+}

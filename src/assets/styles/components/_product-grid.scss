@@ -1,0 +1,146 @@
+$bg-loading: #f2f3f4;
+.collection-product-wrap {
+  @include res(lg) {
+    .collection-image-container {
+      &:hover {
+        &:not(.hover-no-effect) {
+          &:before {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        .hover-secondary {
+          &:first-child {
+            opacity: 0;
+          }
+          & + img {
+            display: block;
+          }
+        }
+
+        &:not(.adjust-height) {
+          .hover-secondary {
+            display: none;
+            & + img {
+              display: block;
+              top: 0;
+            }
+
+            &[lazy=loading] ~ .loader-balls {
+              display: flex;
+              background-color: $bg-loading;
+            }
+          }
+        }
+        &.adjust-height {
+          .hover-secondary {
+            &:not(.progressive)[lazy=loading] {
+              background-color: transparent;
+            }
+
+            &[lazy=loading] ~ .loader-balls {
+              display: flex;
+              background-color: $bg-loading;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .loader-balls {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    &__wrapper {
+      width: 26px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    &__item {
+      $anim-drt: 0.75s;
+      $anim-ease: ease-in-out;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(26, 26, 26, 0.4);
+
+      &:nth-child(1) {
+        animation: bouncing $anim-drt alternate infinite $anim-ease;
+      }
+
+      &:nth-child(2) {
+        animation: bouncing $anim-drt $anim-drt/4 alternate infinite $anim-ease backwards;
+      }
+
+      &:nth-child(3) {
+        animation: bouncing $anim-drt $anim-drt/2 alternate infinite $anim-ease backwards;
+      }
+    }
+  }
+
+  .hover-secondary {
+    & + img {
+      display: none;
+    }
+    &[lazy=loaded] {
+      animation: none;
+    }
+
+    &[lazy=loaded] ~ .loader-balls {
+      display: none;
+    }
+  }
+
+  .collection-image-container {
+    position: relative;
+    .sb-lazy:not(.progressive)[lazy=loading],
+    .sb-lazy:not([src]):before {
+      background-color: $bg-loading;
+    }
+    & > :not(.hover-secondary) {
+      &[lazy=loaded] ~ .loader-balls {
+        display: none;
+      }
+      &[lazy=error] + .loader-balls {
+        display: none;
+      }
+    }
+
+    &:before {
+      content: '';
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba($black, .2);
+      transition: all .2s ease-in;
+      z-index: 1;
+    }
+    &.adjust-height {
+      padding-top: 100%;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+    &.adjust-height,
+    &:not(.adjust-height) {
+      img {
+        width: 100%;
+        &:before {
+          background-color: $bg-loading;
+        }
+      }
+    }
+  }
+}

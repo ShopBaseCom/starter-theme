@@ -1,0 +1,23 @@
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: em(16);
+  color: $grey-darker;
+  line-height: 1.5;
+  &--completed {
+    text-decoration: none;
+    color: $checkout_accent_color;
+  }
+  &--current {
+    font-weight: 500;
+    color: $black;
+  }
+}

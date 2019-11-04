@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+  <title>logo-compact</title>
+  <desc>Created with Sketch.</desc>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g>
+      <polygon fill="#0093ED" fill-rule="evenodd" points="0 0 48 0 48 48 0 48"></polygon>
+      <polygon fill="#78CBFF" fill-rule="evenodd" points="0 36 48 36 48 48 0 48"></polygon>
+      <path d="M34.8079624,12.6364636 C33.0170063,18.7418591 29.7985365,19.4653516 24.0043713,19.4653516 C18.2102061,19.4653516 14.9917363,18.7418591 13.2007801,12.6364636 L8.66,12.5791362 C11.1462875,21.0549263 16.1600215,25.5791362 24.0043713,25.5791362 C31.848721,25.5791362 36.8624551,21.0549263 39.3487426,12.5791362 L34.8079624,12.6364636 Z" fill-opacity="0.158517264" fill="#000000" fill-rule="nonzero"></path>
+      <path d="M35.1556287,10.6317124 C33.3063139,15.6248515 29.9829694,18 24,18 C18.0170306,18 14.6936861,15.6248515 12.8443713,10.6317124 L8.15562872,12.3682876 C10.7229325,19.2999924 15.9000402,23 24,23 C32.0999598,23 37.2770675,19.2999924 39.8443713,12.3682876 L35.1556287,10.6317124 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+  </g>
+</svg>

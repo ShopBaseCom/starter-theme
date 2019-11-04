@@ -1,0 +1,92 @@
+.notifications {
+  opacity: 0.8;
+  position: fixed;
+  bottom: 42px;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  .notification {
+    box-shadow: 0 16px 24px 0 rgba($black, 0.16);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .notification__icon {
+    font-size: 20px;
+  }
+
+  .action-span {
+    position: relative;
+    padding: 16px 8px;
+  }
+
+  .action-position{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    .material-icons {
+      font-size: 20px;
+    }
+  }
+
+  .message {
+    display: flex;
+    align-items: center;
+    line-height: normal;
+  }
+
+  .actions {
+
+    #notificationAction2 {
+      width: 100%;
+    }
+  }
+
+  .success {
+    background: $success;
+  }
+
+  .error {
+    background-color: $danger;
+  }
+
+  .warning {
+    background: $warning;
+  }
+
+  .info {
+    background: $info;
+  }
+
+  .action-border {
+    border-right: 2px solid transparent;
+
+    &.border-success {
+      border-right-color: $success;
+    }
+
+    &.border-error {
+      border-color: $danger;
+    }
+
+    &.border-warning {
+      border-color: $warning;
+    }
+
+    &.border-info {
+      border-color: $info;
+    }
+  }
+
+  .notification-action {
+    background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') 0 -442px no-repeat;
+    background-size: 24px auto;
+    width: 24px;
+    height: 24px;
+    color: transparent;
+    overflow: hidden;
+  }
+}

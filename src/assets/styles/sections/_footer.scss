@@ -1,0 +1,142 @@
+.footer-section {
+  background-color: $color_footer_background;
+  color: $color_footer_text;
+
+  a {
+    color: $color_footer_links;
+    &:hover {
+      color: adaptive-color($color_footer_background, $color_footer_links, 20%);
+    }
+  }
+
+  .icon-down-arrow {
+    background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') 0 -204px no-repeat;
+    background-size: 24px auto;
+    width: 24px;
+    height: 24px;
+
+    &.is-active {
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') 0 -170px no-repeat;
+    }
+
+    @include res(sm) {
+      display: none;
+    }
+  }
+
+  .site-footer {
+    &__header {
+      color: $color_footer_headings;
+    }
+  }
+  .footer_menu,
+  .footer_content {
+    @include res(xs) {
+      border-bottom: 1px solid $gray-100;
+    }
+    @include res(sm) {
+      h6 {
+        pointer-events: none;
+      }
+      .toggle_content {
+        display: block !important;
+      }
+    }
+  }
+  .footer-before {
+    @include res(sm) {
+      display: flex;
+      border-top: 1px solid $gray-100;
+      padding-top: 30px;
+    }
+    & > div {
+      flex: 1 0 50%;
+    }
+  }
+  .footer-after {
+    & > div {
+      flex: 1 0;
+    }
+  }
+  .footer-copyright {
+    p {
+      color: $color_footer_text;
+    }
+  }
+  .powered-by {
+    display: block;
+    background: url('#{$asset_path}/images/icons/powered-by.svg') no-repeat;
+    background-size: contain;
+    width: 120px;
+    height: 28px;
+  }
+  .footer-social {
+    &__icon {
+      display: block;
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat;
+      background-size: 16px auto;
+      width: 16px;
+      height: 16px;
+
+      &--fb {
+        background-position: 0 0;
+      }
+
+      &--tw {
+        background-position: 0 -22px;
+      }
+
+      &--pin {
+        background-position: 0 -44px;
+      }
+
+      &--you {
+        background-position: 0 -158px;
+      }
+
+      &--ins {
+        background-position: 0 -67px;
+      }
+
+      &--blog {
+        background-position: 0 -248px;
+      }
+    }
+  }
+  .footer-credits {
+    @include res(sm) {
+      flex: 1 0 auto;
+      text-align: right;
+
+      ul {
+        justify-content: flex-end;
+      }
+    }
+    &__icon {
+      display: block;
+      background: url('#{$asset_path}/images/icons/sprites-icon-32.svg') no-repeat;
+      width: 32px;
+      height: 24px;
+
+      &--visa {
+        background-position: 0 0;
+      }
+
+      &--master {
+        background-position: -48px 0;
+      }
+
+      &--amex {
+        background-position: -96px 0;
+      }
+
+      &--paypal {
+        background-position: -144px 0;
+      }
+
+      &--amazon {
+        background-position: -192px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.currency-converter-button {
+  height: 20px;
+  color: $gray-400;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  background-image: url(#{$asset_path}/images/icons/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 16px;
+  padding-right: 16px;
+  .currency-icon {
+    margin-right: 6px;
+    width: 20px;
+    height: 20px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.currency-converter-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 11px);
+  width: 329px;
+  background: $white;
+  box-shadow: 0px 4px 24px -4px rgba($black, .16);
+  &__title {
+    color: $gray-400;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 18px;
+    padding: 30px 16px 16px 30px;
+  }
+  &__content {
+    margin: 0 4px 22px 0;
+    max-height: calc(100% - 86px);
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $gray-100;
+      border-radius: 4px;
+    }
+  }
+  &__item {
+    padding: 8px 16px 8px 30px;
+    display: flex;
+    align-items: center;
+    color: $gray-800;
+    font-size: 14px;
+    line-height: 20px;
+    .currency-icon {
+      margin-right: 16px;
+      width: 20px;
+      height: 20px;
+    }
+    .icon-check {
+      display: none;
+    }
+    &:hover:not(.active) {
+      background: $gray-50;
+      cursor: pointer;
+    }
+    &.active {
+      .icon-check {
+        display: inline;
+      }
+      background-image: url(#{$asset_path}/images/icons/check.svg);
+      background-repeat: no-repeat;
+      background-position: center right 6px;
+      background-size: 12px;
+      span {
+        color: #0077cc;
+      }
+    }
+    &__code {
+      margin-right: 8px;
+    }
+  }
+}
+.currency-converter-mobile {
+  width: 94px;
+  height: 100%;
+  position: relative;
+  .currency-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+  }
+  select {
+    width: 100%;
+    height: 100%;
+    padding: 0 24px 0 40px;
+    border: none;
+    background-image: url(#{$asset_path}/images/icons/arrow-down.svg);
+    box-shadow: -1px 0px 0px 0px rgba($gray-400, 0.32), 1px 0px 0px 0px rgba($gray-400, 0.32);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center right 12px;
+    background-size: 16px;
+    font-size: 12px;
+    color: $gray-400;
+  }
+}

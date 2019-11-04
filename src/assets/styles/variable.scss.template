@@ -1,0 +1,57 @@
+// Assets path
+$asset_path: "{{{asset_path}}}";
+
+// Colors
+$color_background: {{color_background}};
+$color_top_bar_background: {{color_top_bar_background}};
+$color_menu_background: {{color_menu_background}};
+$menu_background_opacity: {{menu_background_opacity}};
+$color_announcement_bar_background: {{color_announcement_bar_background}};
+$color_newsletter_section_background: {{color_newsletter_section_background}};
+$color_product_description_background: {{color_product_description_background}};
+$color_mini_cart_background: {{color_mini_cart_background}};
+$color_footer_background: {{color_footer_background}};
+$color_announcement_message_text: {{color_announcement_message_text}};
+$color_logo_text: {{color_logo_text}};
+$color_page_headings: {{color_page_headings}};
+$color_page_content_text: {{color_page_content_text}};
+$color_footer_headings: {{color_footer_headings}};
+$color_footer_text: {{color_footer_text}};
+$color_sale_price: {{color_sale_price}};
+$color_compare_at_price: {{color_compare_at_price}};
+$color_price: {{color_price}};
+$color_top_menu: {{color_top_menu}};
+$color_main_menu: {{color_main_menu}};
+$color_links: {{color_links}};
+$color_footer_links: {{color_footer_links}};
+$color_buttons: {{color_buttons}};
+$color_buttons_label: {{color_buttons_label}};
+$color_banner_buttons: {{color_banner_buttons}};
+$color_banner_buttons_label: {{color_banner_buttons_label}};
+$color_mini_cart_button: {{color_mini_cart_button}};
+$color_mini_cart_button_label: {{color_mini_cart_button_label}};
+
+// Typography
+$type_base_size: {{type_base_size}};
+$type_base_style: {{{type_base_style}}};
+$type_base_family: {{{type_base_family}}};
+$type_header_style: {{{type_header_style}}};
+$type_header_family: {{{type_header_family}}};
+$type_header_base_size: {{type_header_base_size}};
+$type_button_text_style: {{{type_button_text_style}}};
+$type_button_base_family: {{{type_button_base_family}}};
+$capitalize_buttons_text: {{capitalize_buttons_text}};
+$capitalize_headings: {{capitalize_headings}};
+
+// Checkout
+$checkout_body_font: {{{checkout_body_font}}};
+$checkout_error_color: {{checkout_error_color}};
+$checkout_button_color: {{checkout_button_color}};
+$checkout_header_image: "{{{checkout_header_image}}}";
+$checkout_heading_font: {{{checkout_heading_font}}};
+$checkout_body_background_color: {{checkout_body_background_color}};
+$checkout_body_background_image: "{{{checkout_body_background_image}}}";
+$checkout_sidebar_background_color: {{checkout_sidebar_background_color}};
+$checkout_sidebar_background_image: "{{{checkout_sidebar_background_image}}}";
+$checkout_input_background_color_mode: {{checkout_input_background_color_mode}};
+$checkout_accent_color: {{checkout_accent_color}};

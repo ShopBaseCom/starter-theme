@@ -1,0 +1,315 @@
+/* Break-points
+ -------------------------- */
+@mixin res($key, $map: $breakpoints) {
+  @if map-has-key($map, $key) {
+    @media only screen and #{inspect(map-get($map, $key))} {
+      @content;
+    }
+  } @else {
+    @warn "Undefeined points: `#{$map}`";
+  }
+}
+
+/* Placeholder
+ -------------------------- */
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+
+  &::-moz-placeholder {
+    @content
+  }
+
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+/* BEM
+ -------------------------- */
+@mixin b($block) {
+  $B: $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+@mixin extend-rule($name) {
+  @extend #{'%shared-'+$name};
+}
+
+@mixin share-rule($name) {
+  $rule-name: '%shared-'+$name;
+
+  @at-root #{$rule-name} {
+    @content
+  }
+}
+
+@mixin pseudo($pseudo) {
+  @at-root #{&}#{':#{$pseudo}'} {
+    @content
+  }
+}
+
+// Grid
+@mixin make-container($gutter: $grid-gutter-width) {
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+@mixin make-row($gutter: $grid-gutter-width) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter / 2;
+  margin-left: -$gutter / 2;
+}
+
+@mixin make-col-ready($gutter: $grid-gutter-width) {
+  position: relative;
+  // Prevent columns from becoming too narrow when at smaller grid tiers by
+  // always setting `width: 100%;`. This works because we use `flex` values
+  // later on to override this initial width.
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($size / $columns);
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  $num: $size / $columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+  // Common properties for all breakpoints
+  %grid-column {
+    position: relative;
+    width: 100%;
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .col#{$infix}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+    .col#{$infix},
+    .col#{$infix}-auto,
+    .col#{$infix}-one-fifth {
+      @extend %grid-column;
+    }
+
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+      .col#{$infix}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%; // Reset earlier grid tiers
+      }
+
+      //custom size
+      .col#{$infix}-one-fifth {
+        @include make-col(2.4, $columns);
+      }
+
+      @for $i from 1 through $columns {
+        .col#{$infix}-#{$i} {
+          @include make-col($i, $columns);
+        }
+      }
+
+      .order#{$infix}-first { order: -1; }
+
+      .order#{$infix}-last { order: $columns + 1; }
+
+      @for $i from 0 through $columns {
+        .order#{$infix}-#{$i} { order: $i; }
+      }
+
+      // `$columns - 1` because offsetting by the width of an entire row isn't possible
+      @for $i from 0 through ($columns - 1) {
+        @if not ($infix == '' and $i == 0) { // Avoid emitting useless .offset-0
+          .offset#{$infix}-#{$i} {
+            @include make-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}
+
+/// Generate colors values
+/// @name color-selectors
+/// @param {Map} $map [$colors] - Map with color values
+/// @param {String} $selector ['.cl'] - Selector to css class, .#{$selector}-#{$name-of-color}
+/// @param {String} $property ['color'] - CSS property
+@mixin color-selectors($map: $colors, $selector: 'cl', $property: 'color') {
+  @each $name, $value in $map {
+    // in case when color value is map with hover, focus variants
+    @if type-of($value) == map {
+      @if map_has_key($value, default) {
+        .#{$selector}-#{$name} {
+          #{$property}: map-get($value, default);
+        }
+      }
+
+      @if map_has_key($value, hover) {
+        .\:#{$selector}-#{$name}:hover {
+          #{$property}: map-get($value, hover);
+        }
+      }
+
+      @if map_has_key($value, focus) {
+        .\:#{$selector}-#{$name}:focus {
+          #{$property}: map-get($value, focus);
+        }
+      }
+    } @else {
+      .#{$selector}-#{$name} {
+        #{$property}: #{$value};
+      }
+    }
+  }
+}
+
+//  Generate button styles
+@mixin button-styles($adaptive-cl, $button-bg, $button-cl, $percentage) {
+  background-color: $button-bg;
+  border: 1px solid $button-bg;
+  color: $button-cl;
+  // States
+  &:focus,
+  &.focused,
+  &:active,
+  &:hover,
+  &.hovered,
+  &.active {
+    background-color: adaptive-color($adaptive-cl, $button-bg, $percentage);
+    border: 1px solid adaptive-color($adaptive-cl, $button-bg, $percentage);
+    text-decoration: none;
+  }
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: adaptive-color($adaptive-cl, $button-bg, $percentage);
+  }
+}
+
+//Font Stack Mixins
+@mixin bodyFontStack {
+  font-family: $type_base_family;
+  font-size: font-size($type_base_size);
+  font-weight: font-weight($type_base_style);
+}
+
+@mixin headerFontStack {
+  font-family: $type_header_family;
+  font-weight: font-weight($type_header_style);
+  @if $capitalize_headings == true {
+    text-transform: uppercase;
+  }
+}
+
+@mixin buttonFontStack {
+  font-family: $type_button_base_family;
+  font-weight: font-weight($type_button_text_style);
+  @if $capitalize_buttons_text == true {
+    text-transform: uppercase;
+  }
+}
+
+@mixin multilineTextEllipsis($max-height, $line) {
+  display: -webkit-box;
+  max-height: $max-height;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: $line;
+}
+
+@mixin mask-size($value) {
+  -webkit-mask-size: $value;
+  mask-size: $value;
+}
+@mixin mask-image($value) {
+  -webkit-mask-image: $value;
+  mask-image: $value;
+}
+@mixin mask-repeat($value) {
+  -webkit-mask-repeat: $value;
+  mask-repeat: $value;
+}

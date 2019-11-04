@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="262px" height="262px" viewBox="0 0 262 262" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>img</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="262" height="262"></rect>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="🖥--Homepage---Image-placeholder" transform="translate(-443.000000, -3162.000000)">
+            <g id="Feature-collection" transform="translate(150.000000, 3090.000000)">
+                <g id="Product-Copy" transform="translate(293.000000, 72.000000)">
+                    <g id="img">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Rectangle" fill="#BFBFBF" xlink:href="#path-1"></use>
+                        <g id="Camera" mask="url(#mask-2)">
+                            <g transform="translate(37.000000, 81.000000)">
+                                <path d="M82.6785659,8.85483871 L85.9642857,5.59214022 L85.9642857,1.29032258 C85.9642857,0.853839472 85.6104462,0.5 85.1739631,0.5 L59.1474654,0.5 C58.7109823,0.5 58.3571429,0.853839472 58.3571429,1.29032258 L58.3571429,8.06451613 C58.3571429,8.50099924 58.7109823,8.85483871 59.1474654,8.85483871 L82.6785659,8.85483871 Z" id="Rectangle-Copy-17" stroke="#777777"></path>
+                                <path d="M10.2949309,9.39147662 C9.14582228,9.39147662 8.21428571,10.3230132 8.21428571,11.4721218 L8.21428571,97.4193548 C8.21428571,98.5684634 9.14582228,99.5 10.2949309,99.5 L178.705069,99.5 C179.854178,99.5 180.785714,98.5684634 180.785714,97.4193548 L180.785714,4.19354839 C180.785714,3.04443979 179.854178,2.11290323 178.705069,2.11290323 L90.3349059,2.11290323 C89.7795893,2.11290323 89.2473148,2.33489121 88.8565544,2.72945782 L83.1628778,8.47859347 C82.58431,9.06279674 81.7962137,9.39147662 80.9740008,9.39147662 L10.2949309,9.39147662 Z" id="Rectangle" stroke="#777777"></path>
+                                <path d="M8.03571429,23.7096774 L75.2142857,23.7096774" id="Path-55" stroke="#777777"></path>
+                                <path d="M142.714286,23.7096774 L181.178571,23.7096774" id="Path-55-Copy" stroke="#777777"></path>
+                                <g id="Rectangle-2" stroke="none" fill-rule="evenodd" transform="translate(0.000000, 19.032258)">
+                                    <path d="M7.53571429,8.85483871 L7.53571429,0.5 L3.22580645,0.5 C1.72038512,0.5 0.5,1.72038512 0.5,3.22580645 L0.5,6.12903226 C0.5,7.63445359 1.72038512,8.85483871 3.22580645,8.85483871 L7.53571429,8.85483871 Z" id="Rectangle" stroke="#777777"></path>
+                                </g>
+                                <g id="Rectangle-2-Copy" stroke="none" fill-rule="evenodd" transform="translate(184.500000, 24.032258) scale(-1, 1) translate(-184.500000, -24.032258) translate(180.000000, 19.032258)">
+                                    <path d="M7.53571429,8.85483871 L7.53571429,0.5 L3.22580645,0.5 C1.72038512,0.5 0.5,1.72038512 0.5,3.22580645 L0.5,6.12903226 C0.5,7.63445359 1.72038512,8.85483871 3.22580645,8.85483871 L7.53571429,8.85483871 Z" id="Rectangle" stroke="#777777"></path>
+                                    <ellipse id="Oval-Copy-23" stroke="#777777" cx="4.01785714" cy="4.67741935" rx="2.41071429" ry="2.41935484"></ellipse>
+                                </g>
+                                <ellipse id="Oval" stroke="#777777" cx="4.01785714" cy="23.7096774" rx="2.41071429" ry="2.41935484"></ellipse>
+                                <ellipse id="Oval" stroke="#777777" cx="109.125" cy="54.0322581" rx="45.3035714" ry="45.4677419"></ellipse>
+                                <ellipse id="Oval-Copy-20" stroke="#777777" cx="108.964286" cy="54.0322581" rx="35.5" ry="35.6290323"></ellipse>
+                                <ellipse id="Oval-Copy-21" stroke="#777777" cx="108.964286" cy="54.0322581" rx="33.25" ry="33.3709677"></ellipse>
+                                <ellipse id="Oval-Copy-22" stroke="#777777" cx="108.964286" cy="54.0322581" rx="5.92857143" ry="5.9516129"></ellipse>
+                                <rect id="Rectangle" stroke="#777777" x="36.5" y="2.11290323" width="19.5714286" height="6.74193548" rx="1.29032258"></rect>
+                                <rect id="Rectangle-Copy-16" stroke="#777777" x="41.3214286" y="1.46774194" width="10.25" height="1" rx="0.5"></rect>
+                                <rect id="Rectangle-Copy-15" stroke="#777777" x="12.3928571" y="5.66129032" width="22.4642857" height="3.19354839" rx="1.29032258"></rect>
+                                <ellipse id="Oval" stroke="#777777" cx="61.7142857" cy="16.4516129" rx="3.21428571" ry="3.22580645"></ellipse>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

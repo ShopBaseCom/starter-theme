@@ -1,0 +1,451 @@
+{
+  "font_list": "Muli:light,normal,bold|Montserrat:light,normal,bold",
+  "orders": {
+    "homepage": [
+      "homepage_slideshow",
+      "rich_text-Jxk37",
+      "image_with_text-5O5xl",
+      "featured_collection-Zq2hp",
+      "customer_testimonial-MXp3W",
+      "homepage_collection_list",
+      "video-j2U2y",
+      "newsletter-Vkt5D"
+    ],
+    "product": [
+      "product_page"
+    ]
+  },
+  "pages": {
+    "checkout": {},
+    "collections": {},
+    "fixed": {
+      "footer": {
+        "settings": {
+          "blocks": [
+            {
+              "element_type": "title",
+              "heading": "Roller theme",
+              "text": "From modern contemporary designs to antique collectible pieces from around the world, we create unique designs on any product by independent designers. Better your life with high quality products on Roller theme."
+            },
+            {
+              "element_type": "menu",
+              "main_menu": "main-menu"
+            },
+            {
+              "element_type": "page"
+            }
+          ],
+          "show_payment_method_icons": true,
+          "show_social_media_icons": false,
+          "show_powered_by": true
+        },
+        "type": "footer"
+      },
+      "header": {
+        "settings": {
+          "cart_icon": "bag",
+          "enable_search": true,
+          "fixed_header": false,
+          "main": "main-menu",
+          "main_menu_top_padding": 0,
+          "show_cart": true,
+          "show_announcement_bar": true,
+          "show_social_media_icons": true,
+          "show_top_bar": true,
+          "top_bar_menu": "main-menu",
+          "width": 205
+        },
+        "type": "header"
+      }
+    },
+    "homepage": {
+      "customer_testimonial-MXp3W": {
+        "settings": {
+          "blocks": [
+            {
+              "id": "testimonial-0",
+              "alignment": "centre",
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.",
+              "customer_name": "Jonh Doe",
+              "darken_background_image": true,
+              "position": "centre",
+              "store_name": "Shopbase",
+              "use_image": false
+            },
+            {
+              "id": "testimonial-1",
+              "alignment": "centre",
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.",
+              "customer_name": "Jonh Doe",
+              "darken_background_image": true,
+              "position": "centre",
+              "store_name": "Shopbase",
+              "use_image": false
+            },
+            {
+              "id": "testimonial-2",
+              "alignment": "centre",
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.",
+              "customer_name": "Jonh Doe",
+              "darken_background_image": true,
+              "position": "centre",
+              "store_name": "Shopbase",
+              "use_image": false
+            }
+          ],
+          "change_slides_every": 6,
+          "text_animation": "fade_down"
+        },
+        "title": "Customer Testimonial",
+        "type": "customer_testimonial",
+        "visible": true
+      },
+      "featured_collection-Zq2hp": {
+        "settings": {
+          "heading": "Featured Collection",
+          "layout": "slider",
+          "limit_products": 45,
+          "product_per_row": 3,
+          "show_view_more_button": true,
+          "view_more_button_label": "View more"
+        },
+        "type": "featured_collection",
+        "visible": true
+      },
+      "homepage_collection_list": {
+        "settings": {
+          "blocks": [],
+          "heading": "Collection list"
+        },
+        "type": "collection_list",
+        "visible": true
+      },
+      "homepage_slideshow": {
+        "settings": {
+          "blocks": [
+            {
+              "background_image": "https://img.shopbasecdn.com/themes/2/assets/slideshow/denmark/slider_1.jpg",
+              "first_button_label": "Shop Men",
+              "first_button_link": {
+                "name": "",
+                "position": 0,
+                "subject": {
+                  "handle": ""
+                },
+                "type": "",
+                "type_options": {
+                  "subject": "",
+                  "subject_id": null,
+                  "title": ""
+                }
+              },
+              "heading": "Roller Shop Base Theme",
+              "highlight_first_button_link": false,
+              "highlight_second_button_link": true,
+              "id": "slideshow-0",
+              "preheading": "Introducing The",
+              "second_button_label": "Shop Women",
+              "second_button_link": {
+                "name": "",
+                "position": 0,
+                "subject": {
+                  "handle": ""
+                },
+                "type": "",
+                "type_options": {
+                  "subject": "",
+                  "subject_id": null,
+                  "title": ""
+                }
+              },
+              "subheading": "Exclusively From Shop Base",
+              "text_alignment": "centre",
+              "text_position": "centre"
+            },
+            {
+              "background_image": "https://img.shopbasecdn.com/themes/2/assets/slideshow/denmark/slider_2.jpg",
+              "first_button_label": "View Detailed",
+              "first_button_link": {
+                "name": "",
+                "position": 0,
+                "subject": {
+                  "handle": ""
+                },
+                "type": "",
+                "type_options": {
+                  "subject": "",
+                  "subject_id": null,
+                  "title": ""
+                }
+              },
+              "heading": "Optimize For Speed",
+              "highlight_first_button_link": false,
+              "highlight_second_button_link": false,
+              "id": "slideshow-1",
+              "preheading": "Fast Loading +Flexible",
+              "second_button_label": "",
+              "second_button_link": {
+                "name": "",
+                "position": 0,
+                "subject": {
+                  "handle": ""
+                },
+                "type": "",
+                "type_options": {
+                  "subject": "",
+                  "subject_id": null,
+                  "title": ""
+                }
+              },
+              "subheading": "Optional Text + Action Buttons On Each Slide",
+              "text_alignment": "centre",
+              "text_position": "centre"
+            },
+            {
+              "background_image": "https://img.shopbasecdn.com/themes/2/assets/slideshow/denmark/slider_3.jpg",
+              "first_button_label": "Learn More",
+              "first_button_link": {
+                "name": "",
+                "position": 0,
+                "subject": {
+                  "handle": ""
+                },
+                "type": "",
+                "type_options": {
+                  "subject": "",
+                  "subject_id": null,
+                  "title": ""
+                }
+              },
+              "heading": "A Seamless Shopping Experience",
+              "highlight_first_button_link": false,
+              "highlight_second_button_link": false,
+              "id": "slideshow-2",
+              "preheading": "Full - Width Slideshow",
+              "second_button_label": "",
+              "second_button_link": {
+                "name": "",
+                "position": 0,
+                "subject": {
+                  "handle": ""
+                },
+                "type": "",
+                "type_options": {
+                  "subject": "",
+                  "subject_id": null,
+                  "title": ""
+                }
+              },
+              "subheading": "",
+              "text_alignment": "centre",
+              "text_position": "centre"
+            }
+          ],
+          "change_slides_every": 6,
+          "gallery_transition": "slide",
+          "opacity": 30,
+          "text_animation": "fade_in"
+        },
+        "type": "slideshow",
+        "visible": true
+      },
+      "image_with_text-5O5xl": {
+        "settings": {
+          "blocks": [
+            {
+              "button_label": "View All",
+              "heading": "Your headline",
+              "show_button": false,
+              "text": "Promotion description appears here."
+            },
+            {
+              "button_label": "Shop now",
+              "heading": "Your headline",
+              "show_button": false,
+              "text": "Promotion description appears here."
+            },
+            {
+              "button_label": "Discover here",
+              "heading": "Your headline",
+              "show_button": false,
+              "text": "Promotion description appears here."
+            }
+          ],
+          "choose_layout": "image_with_text_above",
+          "images_per_row": 3,
+          "promotions_animation": "fade_in",
+          "text_alignment": "left"
+        },
+        "type": "image_with_text",
+        "visible": true
+      },
+      "newsletter-Vkt5D": {
+        "settings": {
+          "heading": "Subscribe to our newsletter",
+          "subheading": "A short sentence describing what someone will receive by subscribing"
+        },
+        "type": "newsletter",
+        "visible": true
+      },
+      "rich_text-Jxk37": {
+        "settings": {
+          "heading": "Energize Your Shop, With A Theme Built For Speed",
+          "link_label": "View our impressive features here.",
+          "text": "Roller is next generation ecommerce at its  best: an incredibly flexible and sophisticated theme that will make your shop as stunning as it is fast",
+          "text_alignment": "centre"
+        },
+        "type": "rich_text",
+        "visible": true
+      },
+      "video-j2U2y": {
+        "settings": {
+          "autoplay_video": true,
+          "display_solid_text_background": true,
+          "enable_background_transparency": true,
+          "first_button_label": "Play video",
+          "heading": "High Performance Ecommerce",
+          "highlight_first_button_link": true,
+          "highlight_second_button_link": false,
+          "second_button_label": "",
+          "subheading": "Full - Width Youtube, Mp4 Video",
+          "text_alignment": "centre",
+          "text_position": "centre"
+        },
+        "type": "video",
+        "visible": true
+      }
+    },
+    "product": {
+      "product_page": {
+        "settings": {
+          "blocks": [
+            {
+              "content": "<ul>\n<li><strong>100% Secure payment</strong> with SSL Encryption.</li>\n<li>If you're not <strong>100% satisfied</strong>, let us know and we'll make it right.</li>\n</ul>",
+              "element_type": "additional-tab",
+              "heading": "Return & Warranty",
+              "collapse_tab": false
+            },
+            {
+              "element_type": "product-desc",
+              "heading": "Description",
+              "collapse_tab": false
+            },
+            {
+              "content": "<ul>\n<li>Orders ship within <strong>5 to 10 business days</strong>.</li>\n<li><strong>Tip:</strong> Buying 2 products or more at the same time will save you quite a lot on shipping fees.</li>\n</ul>",
+              "element_type": "additional-tab",
+              "heading": "Shipping Policies",
+              "collapse_tab": false
+            }
+          ],
+          "display_on": "all",
+          "enable_color_swatches": true,
+          "enable_group_swatches": true,
+          "enable_product_gallery_popup": true,
+          "enable_trust_badge": true,
+          "product_review_type": "single",
+          "show_breadcrumb_links": false,
+          "show_collections": false,
+          "show_price_savings": false,
+          "show_sku": false,
+          "show_social_media_icons": true,
+          "show_sticky_button": true,
+          "show_tags": false,
+          "show_types": false,
+          "show_vendor": false,
+          "template_product": "description_bottom",
+          "trust_badge": "https://img.shopbasecdn.com/themes/2/assets/editor/default-trust_badge-roller.png"
+        },
+        "type": "product_page",
+        "visible": true
+      }
+    }
+  },
+  "settings": {
+    "cart": {
+      "cart_type": "page",
+      "mini_cart_checkout": false,
+      "mini_cart_checkout_help_text": null,
+      "show_total_savings": false
+    },
+    "checkout": {
+      "checkout_accent_color": "#0082e5",
+      "checkout_body_alt_text": null,
+      "checkout_body_background_color": "#ffffff",
+      "checkout_body_background_image": null,
+      "checkout_body_font": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+      "checkout_button_color": "#0082e5",
+      "checkout_custom_css": null,
+      "checkout_custom_javascript": null,
+      "checkout_error_color": "#d11b27",
+      "checkout_header_alt_text": null,
+      "checkout_header_image": null,
+      "checkout_heading_font": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+      "checkout_input_background_color_mode": "white",
+      "checkout_logo_alt_text": null,
+      "checkout_logo_image": null,
+      "checkout_logo_position": "position",
+      "checkout_sidebar_alt_text": null,
+      "checkout_sidebar_background_color": "#f3f3f3",
+      "checkout_sidebar_background_image": null
+    },
+    "colors": {
+      "color_announcement_bar_background": "#285f8a",
+      "color_announcement_message_text": "#ffffff",
+      "color_background": "#ffffff",
+      "color_banner_buttons": "#285f8a",
+      "color_banner_buttons_label": "#ffffff",
+      "color_buttons": "#3FBC1A",
+      "color_buttons_label": "#ffffff",
+      "color_compare_at_price": "#999999",
+      "color_footer_background": "#ffffff",
+      "color_footer_headings": "#1a1a1a",
+      "color_footer_links": "#999999",
+      "color_footer_text": "#1a1a1a",
+      "color_links": "#1a1a1a",
+      "color_logo_text": "#1a1a1a",
+      "color_main_menu": "#1a1a1a",
+      "color_menu_background": "#ffffff",
+      "color_mini_cart_background": "#ffffff",
+      "color_mini_cart_button": "#3FBC1A",
+      "color_mini_cart_button_label": "#ffffff",
+      "color_newsletter_section_background": "#f4f4f4",
+      "color_page_content_text": "#1a1a1a",
+      "color_page_headings": "#1a1a1a",
+      "color_price": "#285f8a",
+      "color_product_description_background": "#f4f4f4",
+      "color_sale_price": "#a62b0d",
+      "color_top_bar_background": "#f4f4f4",
+      "color_top_menu": "#1a1a1a",
+      "menu_background_opacity": 100
+    },
+    "currency": {},
+    "product_grid": {
+      "crop_product_images": true,
+      "enable_color_swatches": true,
+      "enable_group_swatches": true,
+      "enable_select_variant_by_image": null,
+      "free_product_text": "Free",
+      "link_product_options": "show_available",
+      "options_style": "buttons",
+      "products_per_row_on_mobile": 2,
+      "show_quantity_box": true,
+      "enable_same_line_quantity_box": true,
+      "show_sale_banners": false,
+      "show_secondary_product_image": true,
+      "enable_countdown_timer": false,
+      "countdown_time": 19
+    },
+    "typography": {
+      "capitalize_buttons_text": true,
+      "capitalize_headings": true,
+      "type_base_family": "'Muli', sans-serif",
+      "type_base_size": 14,
+      "type_base_style": "regular",
+      "type_button_base_family": "'Montserrat', sans-serif",
+      "type_button_text_style": "regular",
+      "type_header_base_size": 48,
+      "type_header_family": "'Montserrat', sans-serif",
+      "type_header_style": "regular"
+    }
+  }
+}

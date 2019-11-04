@@ -1,0 +1,108 @@
+@mixin center($width, $height: 0) {
+  position: absolute;
+  @if $height != 0 {
+    left: calc(50% - (#{$width} / 2));
+    top: calc(50% - (#{$height} / 2));
+  } @else {
+    left: calc(50% - (#{$width} / 2));
+    top: calc(50% - (#{$width} / 2));
+  }
+}
+
+// Spin Around
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+%loader {
+  animation: spinAround 500ms infinite linear;
+  border: 2px solid $grey-lighter;
+  border-radius: $radius-rounded;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: '';
+  display: block;
+  height: em(14);
+  position: relative;
+  width: em(14);
+}
+
+.s-button {
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  background-color: $checkout_button_color;
+  background-clip: border-box;
+  box-sizing: border-box;
+  box-shadow: none;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  color: white;
+  font-family: $checkout_body_font;
+  font-size: em(16);
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  padding: em(19, 16) em(30, 16);
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    outline: none;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+
+  &:hover,
+  &.is-hovered {
+    text-decoration: none;
+    background-color: adaptive-color($checkout_body_background_color, $checkout_button_color, 20%);
+    border-color: transparent;
+    color: white;
+  }
+  &:focus,
+  &.is-focused {
+    border-color: transparent;
+    color: white;
+
+    &:not(:active) {
+      box-shadow: 0 0 0 em(2) rgba($checkout_button_color, 0.25);
+    }
+  }
+  &:active,
+  &.is-active {
+    background-color: adaptive-color($checkout_body_background_color, $checkout_button_color, 20%);
+    border-color: transparent;
+    color: white;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: $gray-100 !important;
+    color: $gray-200 !important;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  &.is-loading {
+    border: 1px solid rgba(82, 92, 101, 0.1);
+    color: transparent !important;
+    pointer-events: none;
+    &::after {
+      @extend %loader;
+      @include center(em(16));
+      position: absolute !important;
+      border-color: transparent transparent $white $white !important;
+    }
+  }
+}

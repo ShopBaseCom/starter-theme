@@ -1,0 +1,176 @@
+//
+// Headings
+//
+.h1 {
+  @extend h1;
+}
+
+.h2 {
+  @extend h2;
+}
+
+.h3 {
+  @extend h3;
+}
+
+.h4 {
+  @extend h4;
+}
+
+.h5 {
+  @extend h5;
+}
+
+.h6 {
+  @extend h6;
+}
+
+// Type display classes
+@each $size in $sizes {
+  $i: index($sizes, $size);
+  .display-#{$i} {
+    font-size: $size;
+  }
+}
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+  .has-text-#{$name} {
+    color: $color;
+  }
+  a.has-text-#{$name} {
+    &:hover,
+    &:focus {
+      color: darken($color, 10%);
+    }
+  }
+  .has-background-#{$name} {
+    background-color: $color;
+  }
+}
+
+$alignments: ('center': 'center', 'justify': 'justify', 'left': 'left', 'right': 'right');
+
+@each $alignment, $text-align in $alignments {
+  .text-align-#{$alignment} {
+    text-align: #{$text-align};
+  }
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  @include res($breakpoint) {
+    @each $alignment, $text-align in $alignments {
+      .text-align-#{$alignment}-#{$breakpoint} {
+        text-align: #{$text-align};
+      }
+    }
+    .hidden-#{$breakpoint} {
+      display: none !important;
+    }
+  }
+}
+
+.has-text-weight-light {
+  font-weight: $font-weight-light;
+}
+.has-text-weight-normal {
+  font-weight: $font-weight-normal;
+}
+.has-text-weight-medium {
+  font-weight: $font-weight-medium;
+}
+.has-text-weight-semibold {
+  font-weight: $font-weight-semibold;
+}
+.has-text-weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+.is-capitalized {
+  text-transform: capitalize;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
+.is-italic {
+  font-style: italic;
+}
+
+.decoration-none {
+  text-decoration: none;
+}
+
+.decoration-underline {
+  text-decoration: underline;
+}
+
+.\:hover-no-underline:hover {
+  text-decoration: none;
+}
+
+.\:hover-underline:hover {
+  text-decoration: underline;
+}
+
+.list-style-none {
+  list-style: none
+}
+
+.ls-2 {
+  letter-spacing: 2px;
+}
+
+
+//Float
+.clearfix {
+  overflow: auto
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.image-wrap {
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  line-height: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
+
+.svg-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.svg-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.svg-14 {
+  width: 14px;
+  height: 14px;
+}
+
+.word-break-all {
+  word-break: break-all;
+}

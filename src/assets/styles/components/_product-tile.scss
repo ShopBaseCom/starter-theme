@@ -1,0 +1,24 @@
+.collection-product-wrap {
+  .price {
+    .money {
+      font-size: 1.143em;
+    }
+    .sale-price {
+      color: $color_sale_price;
+      font-weight: $font-weight-bold;
+    }
+    .was_price {
+      color: $color_compare_at_price;
+      text-decoration: line-through;
+      font-size: 12px;
+    }
+  }
+  .title {
+    color: $color_links;
+    font-size: 0.857rem;
+    font-weight: $font-weight-medium;
+    &:hover {
+      color: adaptive-color($color_background, $color_links, 20%);
+    }
+  }
+}

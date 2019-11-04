@@ -1,0 +1,46 @@
+.search {
+  .search-bar {
+    @include res(sm) {
+      max-width: 360px;
+    }
+    input {
+      position: relative;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      width: 1%;
+      margin-bottom: 0;
+    }
+    .input-group-btn {
+      background-color: $white;
+    }
+    .icon-search {
+      display: inline-block;
+      background: url('#{$asset_path}/images/icons/sprites-icon-24.svg') no-repeat -1px -335px;
+      background-size: 24px auto;
+      width: 24px;
+      height: 24px;
+    }
+    .fallback-text {
+      clip: rect(0 0 0 0);
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+      position: absolute;
+      height: 1px;
+      width: 1px;
+    }
+  }
+
+  .searching {
+    span {
+      animation: blink 1.4s infinite both;
+
+      &:nth-child(2) {
+        animation-delay: .2s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: .4s;
+      }
+    }
+  }
+}

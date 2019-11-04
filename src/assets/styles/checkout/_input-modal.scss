@@ -1,0 +1,337 @@
+$color-silver: $gray-200;
+$color-active: $gray-1000;
+$color-white: $white;
+$color-tertiary: $gray-200;
+$color-black: $black;
+$color-puerto-rico: $teal;
+$color-hover: $gray-400;
+
+.scoped {
+  &.form {
+    &__checkbox {
+      label {
+        user-select: none;
+        margin-bottom: 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 3px;
+          left: 0;
+          width: 22px;
+          height: 22px;
+          background-color: $color-white;
+          border: 1px solid $color-silver;
+          cursor: pointer;
+        }
+      }
+
+      input {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        opacity: 0;
+
+        &:checked + label {
+          &:before {
+            background-color: $color-silver;
+            border-color: $color-silver;
+            cursor: pointer;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: 5px;
+            width: 11px;
+            height: 5px;
+            border: 3px solid $color-white;
+            border-top: none;
+            border-right: none;
+            background-color: $color-silver;
+            transform: rotate(-45deg);
+          }
+        }
+
+        &:hover,
+        &:focus {
+          + label {
+            &:before {
+              border-color: $color-active;
+            }
+          }
+        }
+
+        &:disabled + label {
+          cursor: not-allowed;
+          opacity: 0.5;
+          pointer-events: none;
+
+          &:hover,
+          &:focus {
+            &:before {
+              border-color: $color-silver;
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+    }
+
+    &__input {
+      input {
+        text-transform: none;
+        background: inherit;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          border-color: $color-puerto-rico;
+        }
+
+        &:disabled,
+        &:disabled + label {
+          opacity: 0.5;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+      }
+
+      label {
+        color: #999;
+        position: absolute;
+        pointer-events: none;
+        user-select: none;
+        left: 0;
+        top: 10px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+      }
+
+      input:focus ~ label, input:not(.empty) ~ label {
+        top: -16px;
+        font-size: font-size($type_base_size);
+        color: $color-puerto-rico;
+      }
+
+      .icon {
+        right: 6px;
+        top: 10px;
+
+        &:hover,
+        &:focus {
+          color: $color-hover;
+        }
+      }
+    }
+
+    &__base-input-number {
+      width: 100%;
+
+      &__input {
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        width: 50px;
+        height: 1.4rem;
+        line-height: 1.7rem;
+        @media (min-width: 768px) {
+          height: 1.7rem;
+        }
+      }
+
+      &__label {
+        font-size: font-size($type_base_size);
+        line-height: 1.2rem;
+        max-width: 100px;
+        @media (min-width: 768px) {
+          font-size: font-size($type_base_size);
+          line-height: 1.4rem;
+        }
+      }
+
+    }
+
+    &__base-radio-button {
+      label {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 3px;
+          left: 0;
+          width: 22px;
+          height: 22px;
+          background-color: $color-white;
+          border: 1px solid $color-silver;
+          cursor: pointer;
+        }
+      }
+
+      input {
+        position: absolute;
+        top: 3px;
+        left: 0;
+
+        &:checked + label {
+          &:before {
+            background-color: $color-silver;
+            border-color: $color-silver;
+            cursor: pointer;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: 5px;
+            width: 11px;
+            height: 5px;
+            border: 3px solid $color-white;
+            border-top: none;
+            border-right: none;
+            background-color: $color-silver;
+            transform: rotate(-45deg);
+          }
+        }
+
+        &:hover,
+        &:focus {
+          + label {
+            &:before {
+              border-color: $color-active;
+            }
+          }
+        }
+
+        &:disabled + label {
+          cursor: not-allowed;
+
+          &:hover,
+          &:focus {
+            &:before {
+              border-color: $color-silver;
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+    }
+
+    &__select-wrapper {
+      &::after {
+        border: 3px solid black;
+        border-radius: 2px;
+        border-right: 0;
+        border-top: 0;
+        content: ' ';
+        display: block;
+        height: 0.625em;
+        pointer-events: none;
+        transform: rotate(-45deg);
+        width: 0.625em;
+        position: absolute;
+        right: 0.625em;
+        top: 0.25em;
+      }
+
+      select {
+        font-size: font-size($type_base_size);
+        line-height: 1.5rem;
+        height: 1.5rem;
+        border: none;
+        width: 100%;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border-radius: 0;
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          border-color: $color-puerto-rico;
+        }
+
+        &:disabled,
+        &:disabled + label {
+          opacity: 0.5;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+      }
+
+      label {
+        color: #999;
+        position: absolute;
+        pointer-events: none;
+        user-select: none;
+        left: 8px;
+        top: 10px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+        @media (max-width: 425px) {
+          left: 8px;
+        }
+      }
+
+      select:focus ~ label, select:not(.empty) ~ label {
+        top: -16px;
+        font-size: font-size($type_base_size);
+        color: $color-puerto-rico;
+      }
+    }
+
+    &__base-text-area {
+      textarea {
+        &:hover,
+        &:focus {
+          outline: none;
+          border-color: $color-puerto-rico;
+        }
+
+        resize: none;
+        background: inherit;
+        min-height: 100px;
+      }
+
+      label {
+        color: #999;
+        position: absolute;
+        pointer-events: none;
+        left: 0;
+        top: 10px;
+        transition: 0.2s ease all;
+      }
+
+      textarea:focus ~ label,
+      textarea:not(.empty) ~ label {
+        top: -16px;
+        font-size: font-size($type_base_size);
+        color: $color-puerto-rico;
+      }
+
+      .icon {
+        right: 6px;
+        top: 10px;
+
+        &:hover,
+        &:focus {
+          color: $color-hover;
+        }
+      }
+    }
+  }
+
+  .lh30 {
+    line-height: 30px;
+  }
+
+  [data-testid='errorMessage'] {
+    text-transform: none;
+  }
+
+  .cl-error {
+    color: $danger;
+  }
+}

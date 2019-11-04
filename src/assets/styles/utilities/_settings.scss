@@ -1,0 +1,97 @@
+// Type
+$type_base_family: 'Muli', sans-serif;
+$type_base_style: regular;
+$type_base_size: 14;
+
+$type_header_family: 'Montserrat', sans-serif;
+$type_header_style: regular;
+$type_header_base_size: 48;
+$capitalize_headings: true;
+
+$type_button_base_family: 'Montserrat', sans-serif;
+$type_button_text_style: regular;
+$capitalize_buttons_text: false;
+
+// Colors
+$color_header_background: #ffffff;
+$color_header_link: #222222;
+
+$color_body_background: #FFFFFF;
+
+$color_headings: #1A1A1A;
+$color_body_text: #1A1A1A;
+
+$color_borders: #dfdfdf;
+$color_button_text: #FFFFFF;
+
+$color_primary: $blue;
+$color_secondary: $blue;
+$color_button_text: #FFFFFF;
+
+$color_product_background: #F3F3F3;
+$color_input: #FFFFFF;
+$color_newsletter: #F3F3F3;
+$color_sale_tag: #a62b0d;
+
+$color_footer_background: #FFFFFF;
+$color_footer_text: #444444;
+
+// for button
+$color_drawer_background: #FFFFFF;
+$color_drawer_text: #222222;
+$color_drawer_border: #444444;
+$color_drawer_button: #222222;
+
+
+$color_background: #ffffff;
+$color_top_bar_background: #f4f4f4;
+$color_menu_background: #ffffff;
+$menu_background_opacity: 100;
+$color_announcement_bar_background: #285f8a;
+$color_newsletter_section_background: #f4f4f4;
+$color_product_description_background: #f4f4f4;
+$color_mini_cart_background: #ffffff;
+$color_footer_background: #ffffff;
+$color_announcement_message_text: #ffffff;
+$color_logo_text: #1a1a1a;
+$color_page_headings: #1a1a1a;
+$color_page_content_text: #1a1a1a;
+$color_footer_headings: #1a1a1a;
+$color_footer_text: #1a1a1a;
+$color_sale_price: #a62b0d;
+$color_compare_at_price: #999999;
+$color_price: #285f8a;
+$color_top_menu: #1a1a1a;
+$color_main_menu: #1a1a1a;
+$color_links: #1a1a1a;
+$color_footer_links: #1a1a1a;
+$color_buttons: #285f8a;
+$color_buttons_label: #ffffff;
+$color_banner_buttons: #285f8a;
+$color_banner_buttons_label: #ffffff;
+$color_mini_cart_button: #285f8a;
+$color_mini_cart_button_label: #ffffff;
+
+// Slide show section setting
+
+$slide_image_position: 'middle - center';
+$slide_show_overlay: block;
+$slide_overlay_opacity: opacity(.25);
+
+$slide_text_alignment: 'middle - center';
+$slide_text_color: #FFFFFF;
+$slide_button_label_color: #FFFFFF;
+$slide_button_color: #bd9669;
+
+// Checkout
+$checkout_accent_color:  #A26B25;
+$checkout_body_background_color: #FFFFFF;
+$checkout_body_background_image: none;
+$checkout_body_font: 'Montserrat', sans-serif;
+$checkout_button_color: #000000;
+$checkout_error_color: #FF0000;
+$checkout_header_image: none;
+$checkout_heading_font: 'Montserrat', sans-serif;
+$checkout_input_background_color_mode: white;
+$checkout_sidebar_background_color: #F3F3F3;
+$checkout_sidebar_background_image: none;

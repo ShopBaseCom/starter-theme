@@ -1,0 +1,67 @@
+$input-background-color: $white !default;
+$input-radius: $radius !default;
+$input-border-color: $grey-dark !default;
+$input-color: $black !default;
+$input-transition: all .2s ease-out !default;
+$input-placeholder-color: $grey-darker !default;
+$input-hover-border-color: $grey-dark !default;
+$input-focus-border-color: $blue !default;
+$input-focus-border-color: $blue !default;
+
+.StripeElement {
+  position: relative;
+  display: inline-flex;
+  -webkit-appearance: none;
+  background-color: $input-background-color;
+  background-image: none;
+  border-radius: $input-radius;
+  border: 1px solid $input-border-color;
+  box-sizing: border-box;
+  color: $input-color;
+  height: em(48);
+  line-height: normal;
+  outline: none;
+  padding-left: em(15);
+  padding-right: em(48);
+  transition: $input-transition;
+  width: 100%;
+  align-items: center;
+  & > * {
+    flex: 1;
+  }
+
+  &--focus {
+    outline: none;
+    border-color: $input-focus-border-color;
+    box-shadow: 0 0 0 1px $input-focus-border-color;
+  }
+
+  &--invalid {
+    border-color: $red;
+    box-shadow: 0 0 0 1px $red;
+  }
+}
+
+.stripe-form {
+  .StripeElement {
+    font-size: em(16);
+    line-height: 1.5;
+    height: em(44, 16);
+    padding-left: em(15, 16);
+    padding-right: em(44, 16);
+  }
+  .field--card-input {
+    .s-input.is-medium {
+      font-size: em(16);
+      .s-input__inner {
+        height: em(44, 16);
+      }
+    }
+  }
+  .field__icon {
+    height: em(44);
+    width: em(44);
+    right: em(8);
+    top: em(8);
+  }
+}

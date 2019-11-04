@@ -1,0 +1,146 @@
+.thumbnail-carousel-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  transition: .2s all ease-in;
+  z-index: 4;
+
+  &__wrapper {
+    width: auto;
+    transition: .2s all ease-in;
+  }
+
+  &__container {
+    background: rgba($black, .8);
+    position: relative;
+    padding: 12px 6px;
+    transition: .2s all ease-in;
+
+    &:hover {
+      .VueCarousel-navigation-button {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__thumbnails {
+    .VueCarousel-navigation-button {
+      position: absolute !important;
+      height: 48px;
+      outline: none;
+      visibility: hidden;
+    }
+    .VueCarousel-navigation-prev {
+      margin-left: -12px;
+    }
+
+    img {
+      position: relative;
+      display: block;
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  &__slide {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      width: 48px;
+      height: 48px;
+      background: rgba($black, .6);
+    }
+
+    @include res(md) {
+      &:hover {
+        &:before {
+          background: transparent;
+        }
+      }
+    }
+
+    &-active {
+      &:before {
+        background: transparent;
+      }
+      img {
+        padding: 2px;
+        border: 1px solid $white;
+      }
+    }
+  }
+  &__hide-thumbnails {
+    background: rgba($black, .8);
+    position: absolute;
+    bottom: 100%;
+    border-radius: 6px 6px 0 0;
+    height: 12px;
+    padding: 0 8px;
+  }
+  &__show-thumbnails {
+    padding: 3px 8px;
+    background: rgba($black, .8);
+    border-radius: 10px 10px 0 0;
+    transition: .2s all ease-out;
+    min-width: 147px;
+
+    .label {
+      color: $gray-400;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+  }
+  &__up, &__down {
+    border: 2px solid $gray-600;
+    height: 7px;
+    width: 7px;
+    border-top: 0;
+    border-right: 0;
+    display: inline-block;
+  }
+
+  &__up {
+    transform: rotate(135deg);
+  }
+  &__down {
+    transform: rotate(-45deg);
+  }
+}
+
+@include res(xs) {
+  .thumbnail-carousel-bar {
+    &__container {
+      padding: 8px 4px;
+    }
+
+    &__thumbnails {
+      .VueCarousel-navigation-button {
+        height: 32px;
+        visibility: visible;
+      }
+
+      .VueCarousel-navigation-next {
+        margin-right: -12px;
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    &__slide {
+      &:before {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+// Colors / backgrounds
+// =======================
+// Generate colors selectors
+// .cl-{#name-of-color}
+@include color-selectors($colors, 'cl', 'color');

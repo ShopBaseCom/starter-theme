@@ -1,0 +1,41 @@
+.roller-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background-color: rgba($black, 0.9);
+  overflow: auto;
+  &__body {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    @include res(md) {
+      width: 600px;
+      border-radius: 3px;
+      margin: 128px auto;
+    }
+    background-color: $white;
+    &__icon-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      @include mask-image(url(#{$asset_path}/images/icons/close.svg?v=1));
+      @include mask-size(24px);
+      @include mask-repeat(no-repeat);
+      background-color: $gray-400;
+      width: 24px;
+      height: 24px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &__content {
+      padding: 30px 16px;
+      @include res(md) {
+        padding: 30px;
+      }
+    }
+  }
+}

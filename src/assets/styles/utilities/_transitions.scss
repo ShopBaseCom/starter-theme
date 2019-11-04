@@ -1,0 +1,30 @@
+.collapse-transition {
+  transition: 0.3s height ease-in-out, 0.3s padding-top ease-in-out, 0.3s padding-bottom ease-in-out;
+}
+
+.fade-in-down-enter-active,
+.fade-in-up-enter-active {
+  transition: all .25s cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.fade-in-down-leave-active,
+.fade-in-up-leave-active {
+  transition: all .2s cubic-bezier(0.4, 0, 1, 1)
+}
+
+.fade-in-down-enter,
+.fade-in-down-leave-to,
+.fade-in-up-enter,
+.fade-in-up-leave-to {
+  opacity: 0
+}
+
+.fade-in-down-enter,
+.fade-in-down-leave-to {
+  transform: translateY(-100%)
+}
+
+.fade-in-up-enter,
+.fade-in-up-leave-to {
+  transform: translateY(100%)
+}
